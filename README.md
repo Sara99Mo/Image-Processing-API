@@ -83,4 +83,4 @@ To run tests, run the following command
 Sara Mohamed ([@Sara99Mo](https://github.com/Sara99Mo))
 
 ## Final Project Interface
-![Output](https://github.com/Sara99Mo/Image-Processing-API.git/assets/Image-Processing-API.png)
+![Output](https://github.com/Sara99Mo/Image-Processing-API/assets/Image-Processing-API.png)
