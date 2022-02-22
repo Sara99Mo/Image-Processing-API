@@ -5,30 +5,28 @@ import path from 'path';
 const listImagesRouter = express.Router();
 
 listImagesRouter.get('/', async (_req: Request, res: Response): Promise<void> => {
-    const folderPathFullImage = `${path.resolve(__dirname, '../../../assets/full')}`;
+  const folderPathFullImage = `${path.resolve(__dirname, '../../../assets/full')}`;
 
-    const files: string[] | null = await fs.readdir(folderPathFullImage).catch(() => {
-        res.status(500).send('Error occured reading the images');
-        return null;
-    });
+  const files: string[] | null = await fs.readdir(folderPathFullImage).catch(() => {
+    res.status(500).send('Error occured reading the images');
+    return null;
+  });
 
-    if (!files) {
-        return;
-    }
+  if (!files) {
+    return;
+  }
 
-    let htmlResponse = `
+  let htmlResponse = `
     <select name="filename" style="margin: 10px 2px; padding: 8px; width: 55%;">
     <option>Select Image Name</option>
     `;
-    
 
+  files.forEach((file: string): void => {
+    file = file.replace('.jpg', '');
+    htmlResponse = htmlResponse + `<option>${file}</option>`;
+  });
 
-    files.forEach((file: string): void => {
-        file = file.replace('.jpg' , '');
-        htmlResponse = htmlResponse + `<option>${file}</option>`;
-    });
-
-    let htmlForm = `
+  const htmlForm = `
         <h1 style="text-align:center; color:#258;">Image Processing API</h1>
         <h3 style="text-align:center;">Please Enter filename, height and width and make sure url contains correct params</h3>
         <form method="GET" action="api/images" 
@@ -58,7 +56,7 @@ listImagesRouter.get('/', async (_req: Request, res: Response): Promise<void> =>
             >Submit</button>
         </form>
     `;
-    res.status(200).send(`${htmlForm}`);
+  res.status(200).send(`${htmlForm}`);
 });
 
 export default listImagesRouter;
