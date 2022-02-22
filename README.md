@@ -26,6 +26,12 @@ It is an express server which is able to take images located in a folder and cre
 
 ## Scripts
 
+Run prettier
+
+```bash
+  npm run prettier
+```
+
 Run tests
 
 ```bash
