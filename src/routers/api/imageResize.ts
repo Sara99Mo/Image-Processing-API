@@ -47,17 +47,6 @@ imageResize.get('/' , async (req: Request , res: Response): Promise<void> => {
                 res.status(500).send('Error occured processing the image');
             });
     } else {
-        /*let htmlButton = `
-            <br><a href="/"><button 
-            style="
-                margin: 10px 2px 0;
-                color: #212;
-                background: #f56;
-                padding: 10px 20px; 
-                border-radius: 20%;
-                font-weight: 600;
-                font-size: larger;"
-            >Home</button></a>`;*/
         // resize image
         imageHelper
             .resizeImage({

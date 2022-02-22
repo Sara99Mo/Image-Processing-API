@@ -26,12 +26,6 @@ It is an express server which is able to take images located in a folder and cre
 
 ## Scripts
 
-Run prettier
-
-```bash
-  npm run prettier
-```
-
 Run tests
 
 ```bash
@@ -77,6 +71,11 @@ To run tests, run the following command
 ```bash
   npm run test
 ```
+
+## Example (palmtunnel-500x200)
+| Params | Image After Resizing     | 
+| :--------- | :------- |
+| ![Output](https://github.com/Sara99Mo/Image-Processing-API/blob/master/assets/Ex_palmtunnel-500x200.png) | ![Output](https://github.com/Sara99Mo/Image-Processing-API/blob/master/assets/palmtunnel-500x200.png)|
 
 ## Author
 
